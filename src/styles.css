@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/css/toast.css";
+
+.global-row {
+	margin: 0 !important;
+}
+
+.global-row .card {
+	border: 0 !important;
+}
+
+.table-responsive {
+	background-color: #fff;
+	min-height: 100vh;
+	padding:  10px;
+}

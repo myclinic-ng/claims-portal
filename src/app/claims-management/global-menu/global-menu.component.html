@@ -1,0 +1,50 @@
+<div class="text-center d-md-none w-100">
+	<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-navigation">
+		<i class="icon-unfold mr-2"></i>
+		Navigation
+	</button>
+</div>
+<div class="navbar-collapse collapse" id="navbar-navigation">
+	<ul class="navbar-nav navbar-nav-highlight">
+		<li class="nav-item">
+			<a href="#" class="navbar-nav-link">
+				<!-- <i class="icon-home4 mr-1"></i> -->
+				<span class="">Dashboard</span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a [routerLink]="['/admin/plans']" class="navbar-nav-link">
+				<!-- <i class="icon-home4 mr-1"></i> -->
+				<span class="">Packages</span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a [routerLink]="['/admin/subscriptions']" class="navbar-nav-link">
+				<!-- <i class="icon-home4 mr-1"></i> -->
+				<span class="">Subscriptions</span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a [routerLink]="['/admin/profiles']"  class="navbar-nav-link">
+				<!-- <i class="icon-home4 mr-1"></i> -->
+				<span class="">Profiles</span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="navbar-nav-link">
+				<!-- <i class="icon-home4 mr-1"></i> -->
+				<span class="">Providers</span>
+			</a>
+		</li>
+		<li class="nav-item dropdown">
+			<a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+				<!-- <i class="icon-cog3"></i> -->
+				<span class="ml-2">Claims</span>
+			</a>
+			<div class="dropdown-menu dropdown-menu-right">
+				<a href="#" class="dropdown-item"><i class="icon-user-lock"></i> Approval Requests</a>
+				<a href="#" class="dropdown-item"><i class="icon-statistics"></i> Process Claims</a>
+			</div>
+		</li>
+	</ul>
+</div>
