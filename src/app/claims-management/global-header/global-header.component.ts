@@ -16,7 +16,13 @@ export class GlobalHeaderComponent implements OnInit {
   userId: any;
   currentStaffInfo: any = {};
   businessInfo: any = {};
-  constructor(private serverRequest: ServerRequestService, private errorHandler: ErrorHandlerService, private storage: StorageService, private router: Router, private toast: ToastrService) {
+  constructor(
+      private serverRequest: ServerRequestService, 
+      private errorHandler: ErrorHandlerService, 
+      private storage: StorageService, 
+      private router: Router, 
+      private toast: ToastrService
+    ) {
     this.storage.getItem(environment.userCookieIdentifier).subscribe(data => {
       const userInfo: any = JSON.parse(data);
       if (userInfo.staffid != null){
@@ -44,9 +50,12 @@ export class GlobalHeaderComponent implements OnInit {
   }
 
   logout(): void {
-    this.storage.removeItem(environment.userCookieIdentifier)
+    this.storage.clear()
     this.toast.success('Logout Succeeded')
-    this.router.navigateByUrl('')
+    setTimeout(
+      () => this.router.navigateByUrl('/admin'),
+      2000
+     )
   }
 
 }

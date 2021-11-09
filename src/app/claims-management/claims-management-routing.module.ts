@@ -8,6 +8,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PlansComponent } from './components/plans/plans.component';
 import { SubscriptionsComponent } from './components/subscriptions/subscriptions.component';
 import { ProfilesComponent } from './components/profiles/profiles.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
     component: ShellComponent,
     canActivate: [AuthGuardService],
     children: [
+      {
+        path: '',
+        component: DashboardComponent
+      },
       {
         path: 'plans',
         component: PlansComponent
