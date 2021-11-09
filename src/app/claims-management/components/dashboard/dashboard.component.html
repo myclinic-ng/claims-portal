@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 		<div class="card p-2" style="background-color: transparent;">
 			<div class="card-header header-elements-sm-inline">
-				<h2 class="card-title">Dashboard</h2>
+				<h1 class="card-title">Dashboard</h1>
 				<!-- <div class="header-elements"> -->
 					<!-- <span class="badge bg-success badge-pill">{{subscriptions.length}} active</span> -->
 		    	<!-- </div> -->
@@ -11,119 +11,199 @@
 			<div class="card-body">
 				<div class="row">
 					<div class="col-md-3">
-						<div class="card text-center" (click)='clicked()'>
-							<div class="card-header text-center border-bottom-0 bg-transparent text-info pt-4">
-								<h5>Claims</h5>
+						<div class="card" (click)='clicked()'>
+							<div class="card-header border-bottom-0 bg-transparent text-info pt-4">
+								<h1>Claims</h1>
 							</div>
 							<div class="card-body">
-								<h1>$299</h1>
-								<h5 class="text-muted">
-									<small>Taxes per Month</small>
-								</h5>
+								<h4 class="text-danger rounded-pill">
+									<i class="fas fa-male text-success mx-2"></i>
+									<small>New Claim(s) </small>
+									<span class="badge badge-danger rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-venus text-success mx-2"></i>
+									<small>Total Claim Processed Today </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Claims Processed This Week </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Claims Processed This Month </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Claims Processed</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
 							</div>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item">
-									<i class="fas fa-male text-success mx-2"></i>Real-time fee reporting
-								</li>
-								<li class="list-group-item">
-									<i class="fas fa-venus text-success mx-2"></i>Pay only for what you use
-								</li>
-								<li class="list-group-item">
-									<i class="fas fa-gavel text-success mx-2"></i> No setup, monthly, or hidden fees
-								</li>
-							</ul>
-							<div class="card-footer border-top-0">
-								<a href="#" class="text-muted text-uppercase">
-									Create Account <i class="fas fa-arrow-right"></i>
-								</a>
-							</div>
+							<a [routerLink]="['/admin/claims']" class="text-light text-uppercase">
+								<div class="card-footer border-top-0 bg-info">
+										View Claims <i class="fas fa-arrow-right"></i>
+								</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-3">
-						<div class="card text-center" (click)='clicked()'>
-							<div class="card-header text-center border-bottom-0 bg-transparent text-info pt-4">
-								<h5>Packages</h5>
+						<div class="card" (click)='clicked()'>
+							<div class="card-header border-bottom-0 bg-transparent text-info pt-4">
+								<h1>Packages</h1>
 							</div>
 							<div class="card-body">
-								<h1>$299</h1>
-								<h5 class="text-muted">
-									<small>Taxes per Month</small>
-								</h5>
+								<h4 class="text-warning rounded-pill">
+									<i class="fas fa-male text-success mx-2"></i>
+									<small>New Package(s) </small>
+									<span class="badge badge-danger rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-venus text-success mx-2"></i>
+									<small>Most Used Package Today</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Most Used Package This Week</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Most Used Package This Month </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Number of Packages</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
 							</div>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item">
-									<i class="fas fa-male text-success mx-2"></i>Real-time fee reporting
-								</li>
-								<li class="list-group-item">
-									<i class="fas fa-venus text-success mx-2"></i>Pay only for what you use
-								</li>
-								<li class="list-group-item">
-									<i class="fas fa-gavel text-success mx-2"></i> No setup, monthly, or hidden fees
-								</li>
-							</ul>
-							<div class="card-footer border-top-0">
-								<a href="#" class="text-muted text-uppercase">
-									Create Account <i class="fas fa-arrow-right"></i>
-								</a>
-							</div>
+							<a [routerLink]="['/admin/claims']" class="text-light text-uppercase">
+								<div class="card-footer border-top-0 bg-info">
+										View Packages <i class="fas fa-arrow-right"></i>
+								</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-3">
-						<div class="card text-center" (click)='clicked()'>
-							<div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
-								<h5>Subscrriptions</h5>
+						<div class="card" (click)='clicked()'>
+							<div class="card-header border-bottom-0 bg-transparent text-info pt-4">
+								<h1>Subscriptions</h1>
 							</div>
 							<div class="card-body">
-								<h1>$299</h1>
-								<h5 class="text-muted">
-									<small>Taxes per Month</small>
-								</h5>
+								<h4 class="text-warning rounded-pill">
+									<i class="fas fa-male text-success mx-2"></i>
+									<small>New Subscription(s) </small>
+									<span class="badge badge-danger rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-venus text-success mx-2"></i>
+									<small>Total Subscriptions Today</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Subscriptions This Week</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Subscriptions This Month </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Number of Subscriptions</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
 							</div>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item">
-									<i class="fas fa-male text-success mx-2"></i>Real-time fee reporting
-								</li>
-								<li class="list-group-item">
-									<i class="fas fa-venus text-success mx-2"></i>Pay only for what you use
-								</li>
-								<li class="list-group-item">
-									<i class="fas fa-gavel text-success mx-2"></i> No setup, monthly, or hidden fees
-								</li>
-							</ul>
-							<div class="card-footer border-top-0">
-								<a href="#" class="text-muted text-uppercase">
-									Create Account <i class="fas fa-arrow-right"></i>
-								</a>
-							</div>
+							<a [routerLink]="['/admin/subscriptions']" class="text-light text-uppercase">
+								<div class="card-footer border-top-0 bg-info">
+										View Subscriptions <i class="fas fa-arrow-right"></i>
+								</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-3">
-						<div class="card text-center" (click)='clicked()'>
-							<div class="card-header text-center border-bottom-0 bg-transparent text-success pt-4">
-								<h5>Provides</h5>
+						<div class="card" (click)='clicked()'>
+							<div class="card-header border-bottom-0 bg-transparent text-info pt-4">
+								<h1>Providers</h1>
 							</div>
 							<div class="card-body">
-								<h1>$299</h1>
-								<h5 class="text-muted">
-									<small>Taxes per Month</small>
-								</h5>
+								<h4 class="text-warning rounded-pill">
+									<i class="fas fa-male text-success mx-2"></i>
+									<small>New Provider(s) </small>
+									<span class="badge badge-danger rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-venus text-success mx-2"></i>
+									<small>Providers Added Today</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Providers Added This Week</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Providers Added This Month </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Number of Providers</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
 							</div>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item">
-									<i class="fas fa-male text-success mx-2"></i>Real-time fee reporting
-								</li>
-								<li class="list-group-item">
-									<i class="fas fa-venus text-success mx-2"></i>Pay only for what you use
-								</li>
-								<li class="list-group-item">
-									<i class="fas fa-gavel text-success mx-2"></i> No setup, monthly, or hidden fees
-								</li>
-							</ul>
-							<div class="card-footer border-top-0">
-								<a href="#" class="text-muted text-uppercase">
-									Create Account <i class="fas fa-arrow-right"></i>
-								</a>
-							</div>
+							<a [routerLink]="['/admin/providers']" class="text-light text-uppercase">
+								<div class="card-footer border-top-0 bg-info">
+										View Providers <i class="fas fa-arrow-right"></i>
+								</div>
+							</a>
 						</div>
 					</div>
 				</div>
