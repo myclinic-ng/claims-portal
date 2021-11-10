@@ -19,6 +19,11 @@
 							<img src="{{currentStaffInfo.StaffPicture}}" class="rounded-circle mr-2" height="34" alt="">
 							<span>{{currentStaffInfo.StaffFullName}}</span>
 						</a>
+						<div class="dropdown-menu">
+				            <a href="#" (click)="logout()" class="dropdown-item">
+								<span>Logout</span>
+				            </a>
+				        </div>
 					</li>
 				</ul>
 			</div>

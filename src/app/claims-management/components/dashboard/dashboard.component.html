@@ -1,0 +1,213 @@
+<div class="row global-row">
+	<div class="col-md-12">
+		<div class="card p-2" style="background-color: transparent;">
+			<div class="card-header header-elements-sm-inline">
+				<h1 class="card-title">Dashboard</h1>
+				<!-- <div class="header-elements"> -->
+					<!-- <span class="badge bg-success badge-pill">{{subscriptions.length}} active</span> -->
+		    	<!-- </div> -->
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="card" (click)='clicked()'>
+							<div class="card-header border-bottom-0 bg-transparent text-info pt-4">
+								<h1>Claims</h1>
+							</div>
+							<div class="card-body">
+								<h4 class="text-danger rounded-pill">
+									<i class="fas fa-male text-success mx-2"></i>
+									<small>New Claim(s) </small>
+									<span class="badge badge-danger rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-venus text-success mx-2"></i>
+									<small>Total Claim Processed Today </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Claims Processed This Week </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Claims Processed This Month </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Claims Processed</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+							</div>
+							<a [routerLink]="['/admin/claims']" class="text-light text-uppercase">
+								<div class="card-footer border-top-0 bg-info">
+										View Claims <i class="fas fa-arrow-right"></i>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card" (click)='clicked()'>
+							<div class="card-header border-bottom-0 bg-transparent text-info pt-4">
+								<h1>Packages</h1>
+							</div>
+							<div class="card-body">
+								<h4 class="text-warning rounded-pill">
+									<i class="fas fa-male text-success mx-2"></i>
+									<small>New Package(s) </small>
+									<span class="badge badge-danger rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-venus text-success mx-2"></i>
+									<small>Most Used Package Today</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Most Used Package This Week</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Most Used Package This Month </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Number of Packages</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+							</div>
+							<a [routerLink]="['/admin/claims']" class="text-light text-uppercase">
+								<div class="card-footer border-top-0 bg-info">
+										View Packages <i class="fas fa-arrow-right"></i>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card" (click)='clicked()'>
+							<div class="card-header border-bottom-0 bg-transparent text-info pt-4">
+								<h1>Subscriptions</h1>
+							</div>
+							<div class="card-body">
+								<h4 class="text-warning rounded-pill">
+									<i class="fas fa-male text-success mx-2"></i>
+									<small>New Subscription(s) </small>
+									<span class="badge badge-danger rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-venus text-success mx-2"></i>
+									<small>Total Subscriptions Today</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Subscriptions This Week</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Subscriptions This Month </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Number of Subscriptions</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+							</div>
+							<a [routerLink]="['/admin/subscriptions']" class="text-light text-uppercase">
+								<div class="card-footer border-top-0 bg-info">
+										View Subscriptions <i class="fas fa-arrow-right"></i>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card" (click)='clicked()'>
+							<div class="card-header border-bottom-0 bg-transparent text-info pt-4">
+								<h1>Providers</h1>
+							</div>
+							<div class="card-body">
+								<h4 class="text-warning rounded-pill">
+									<i class="fas fa-male text-success mx-2"></i>
+									<small>New Provider(s) </small>
+									<span class="badge badge-danger rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-venus text-success mx-2"></i>
+									<small>Providers Added Today</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Providers Added This Week</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Providers Added This Month </small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+								<h4 class="text-info rounded-pill">
+									<i class="fas fa-gavel text-success mx-2"></i> 
+									<small>Total Number of Providers</small>
+									<span class="badge badge-light rounded float-right">
+										230
+									</span>
+								</h4>
+							</div>
+							<a [routerLink]="['/admin/providers']" class="text-light text-uppercase">
+								<div class="card-footer border-top-0 bg-info">
+										View Providers <i class="fas fa-arrow-right"></i>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

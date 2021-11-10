@@ -17,6 +17,7 @@ import { InsuranceIdComponent } from './components/insurance-id/insurance-id.com
 import { ProfilesComponent } from './components/profiles/profiles.component';
 import { ViewProfileComponent } from './components/profiles/view-profile/view-profile.component';
 import { NewProfileComponent } from './components/profiles/new-profile/new-profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { NewProfileComponent } from './components/profiles/new-profile/new-profi
     InsuranceIdComponent,
     ProfilesComponent,
     ViewProfileComponent,
-    NewProfileComponent
+    NewProfileComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
