@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 
 import { ServerRequestService } from "../../../shared/services/server-request.service";
 import { ErrorHandlerService } from '../../../shared/services/error-handler.service';
+import { EventsService } from '../../../shared/services/events.service';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
@@ -27,7 +28,7 @@ export class InsuranceIdComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject<any>();
 
   constructor(private serverRequest: ServerRequestService, private errorHandler: ErrorHandlerService, 
-    private modalService: NgbModal, private toastr: ToastrService) { }
+    private modalService: NgbModal, private toastr: ToastrService, private events: EventsService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -40,6 +41,12 @@ export class InsuranceIdComponent implements OnInit {
     this.loadPackages();
 
     this.dtTrigger.next();
+
+    this.events.getEvent('reload-subscriptions').subscribe((e)=>{
+      if (e != null){
+        this.loadFinanciers();
+      }
+    })
   }
 
   loadSubscriptions(): void {

@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 
 import { ServerRequestService } from "../../../shared/services/server-request.service";
 import { ErrorHandlerService } from '../../../shared/services/error-handler.service';
+import { EventsService } from '../../../shared/services/events.service';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
@@ -16,6 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 export class FinanciersComponent implements OnInit {
 
   financiers: any = [];
+  financierTypes: any = [];
   newFinancier: any = {};
 
   modal: any;
@@ -24,15 +26,23 @@ export class FinanciersComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject<any>();
 
   constructor(private serverRequest: ServerRequestService, private errorHandler: ErrorHandlerService, 
-    private modalService: NgbModal, private toastr: ToastrService) { }
+    private modalService: NgbModal, private toastr: ToastrService, private events: EventsService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10
     }
-
+    this.loadFinancierTypes();
     this.loadFinanciers();
+  }
+
+  loadFinancierTypes(): void {
+    this.serverRequest.get("insurance-claims/financier/view-financier-types").subscribe((e)=>{
+      this.financierTypes = e.contentData;
+    }, (error)=>{
+      this.errorHandler.process(error);
+    })
   }
 
   loadFinanciers(): void {
@@ -59,6 +69,7 @@ export class FinanciersComponent implements OnInit {
       this.toastr.success("New financier registered", "Operation successful");
       this.modal.close();
       this.loadFinanciers();
+      this.events.broadcast('reload-subscriptions', true);
     }, (error)=>{
       this.errorHandler.process(error);
     })

@@ -8,21 +8,20 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-plans',
-  templateUrl: './plans.component.html',
-  styleUrls: ['./plans.component.css']
+  selector: 'app-services',
+  templateUrl: './services.component.html',
+  styleUrls: ['./services.component.css']
 })
-export class PlansComponent implements OnInit {
-  packages: any = [];
-  newPackage: any = {};
-
+export class ServicesComponent implements OnInit {
   modal: any;
 
-  selectedPackage: any;
-  
+  newCategory: any = {};
+
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
+  categories: any = [];
+  selectedCategory: any;
   constructor(private serverRequest: ServerRequestService, private errorHandler: ErrorHandlerService, 
     private modalService: NgbModal, private toastr: ToastrService) { }
 
@@ -32,17 +31,17 @@ export class PlansComponent implements OnInit {
       pageLength: 10
     }
 
-    this.loadPackages();
+    this.loadCategories();
   }
 
-  loadPackages(): void {
-    this.serverRequest.get("patients/patient-type-category/view").subscribe((e)=>{
-      if (this.packages.length < 1){
-          this.packages = e.contentData;
+  loadCategories(): void {
+    this.serverRequest.get("accounts-biller/billing-type/view").subscribe((e)=>{
+      if (this.categories.length < 1){
+          this.categories = e.contentData;
           this.dtTrigger.next();
       }
       else {
-        this.packages = e.contentData;
+        this.categories = e.contentData;
       }
       
     }, (error)=>{
@@ -51,23 +50,18 @@ export class PlansComponent implements OnInit {
   }
 
   open(content: any) {
+    console.log("called");
     this.modal = this.modalService.open(content);
   }
 
-  saveNewPackage(): void {
-    this.serverRequest.post("insurance-claims/packages/new-package", this.newPackage).subscribe((e)=>{
-      this.toastr.success("New package created", "Operation successful");
+  saveNewCategory(): void {
+    this.serverRequest.post("accounts-biller/billing-type/new", this.newCategory).subscribe((e)=>{
+      this.toastr.success("New service category registered", "Operation successful");
       this.modal.close();
-      this.loadPackages();
+      this.loadCategories();
     }, (error)=>{
       this.errorHandler.process(error);
     })
 
   }
-
-  ngOnDestroy(): void {
-    // Do not forget to unsubscribe the event
-    this.dtTrigger.unsubscribe();
-  }
-
 }

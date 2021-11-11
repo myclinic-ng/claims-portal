@@ -16,6 +16,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ViewProfileComponent implements OnInit {
   @Input() subscription: any;
   patients: any = [];
+  primaryAccount: any = {};
 
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
@@ -29,10 +30,12 @@ export class ViewProfileComponent implements OnInit {
       pageLength: 10
     }
 
-    this.serverRequest.get("patients/patient/view-by-patient-type/"+this.subscription.PatientTypeID).subscribe((e)=>{
+    this.serverRequest.get("patients/patient/view-by-patient-type?resourceId="+this.subscription.PatientTypeID).subscribe((e)=>{
       if (this.patients.length < 1){
           this.patients = e.contentData;
           this.dtTrigger.next();
+
+          this.getPrimaryAccount();
       }
       else {
         this.patients = e.contentData;
@@ -49,14 +52,36 @@ export class ViewProfileComponent implements OnInit {
   }
 
   loadPatients(): void {
-    this.serverRequest.get("patients/patient/view-by-patient-type/"+this.subscription.PatientTypeID).subscribe((e)=>{
-      if (this.patients.length < 1){
-          this.patients = e.contentData;
-          // this.dtTrigger.next();
+    this.serverRequest.get("patients/patient/view-by-patient-type?resourceId="+this.subscription.PatientTypeID).subscribe((e)=>{
+      this.patients = e.contentData;
+      this.getPrimaryAccount();
+    }, (error)=>{
+      this.errorHandler.process(error);
+    })
+  }
+
+  getPrimaryAccount(): void {
+    this.serverRequest.get("insurance-claims/profiles/get-primary-account?resourceId="+this.subscription.PatientTypeID).subscribe((e)=>{
+      if (e.contentData.length == 0 && typeof this.patients[0] !== "undefined"){
+        this.setPrimaryAccount(this.patients[0].patientid);
       }
       else {
-        this.patients = e.contentData;
+        this.primaryAccount = e.contentData
       }
+    }, (error)=>{
+      this.errorHandler.process(error);
+    })
+  }
+
+  setPrimaryAccount(patientId: any): void {
+    const postData = {
+      PlanId: this.subscription.PatientTypeID,
+      PatientId: patientId
+    }
+
+    this.serverRequest.post("insurance-claims/profiles/set-primary-account", postData).subscribe((e)=>{
+      this.toastr.success("Primary account holder updated successfully", "");
+      this.getPrimaryAccount();
     }, (error)=>{
       this.errorHandler.process(error);
     })
@@ -65,5 +90,4 @@ export class ViewProfileComponent implements OnInit {
   ngOnChanges(e: any) {
     this.loadPatients(); 
   }
-
 }

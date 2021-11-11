@@ -17,7 +17,9 @@ import { InsuranceIdComponent } from './components/insurance-id/insurance-id.com
 import { ProfilesComponent } from './components/profiles/profiles.component';
 import { ViewProfileComponent } from './components/profiles/view-profile/view-profile.component';
 import { NewProfileComponent } from './components/profiles/new-profile/new-profile.component';
-
+import { ServicesComponent } from './components/services/services.component';
+import { ViewCategoryComponent } from './components/services/view-category/view-category.component';
+import { ViewServiceCoverageComponent } from './components/plans/view-service-coverage/view-service-coverage.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { NewProfileComponent } from './components/profiles/new-profile/new-profi
     InsuranceIdComponent,
     ProfilesComponent,
     ViewProfileComponent,
-    NewProfileComponent
+    NewProfileComponent,
+    ServicesComponent,
+    ViewCategoryComponent,
+    ViewServiceCoverageComponent
   ],
   imports: [
     CommonModule,

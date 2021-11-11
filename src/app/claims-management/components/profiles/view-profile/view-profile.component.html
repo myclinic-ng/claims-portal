@@ -9,7 +9,7 @@
 			<thead>
 				<tr>
 					<th width="10px">S/N</th>
-					<th>Profile ID</th>
+					<th>Profile</th>
 					<th>Profile Name</th>
 					<th>Email Address</th>
 					<th>Phone Number</th>
@@ -22,6 +22,8 @@
 					<td>
 						<div class="d-flex align-items-center">
 							<div>
+								<p class="text-success m-0 p-0" *ngIf="patient.patientid == primaryAccount.PatientID">Account Holder</p>
+								<p class="text-info m-0 p-0" *ngIf="patient.patientid != primaryAccount.PatientID">Dependent</p>
 								<a class="text-default font-weight-semibold">{{patient.patientuuid}}</a>
 							</div>
 						</div>
@@ -38,7 +40,7 @@
 									<a class="dropdown-item"><i class="icon-file-text2"></i> Edit </a>
 									<a class="dropdown-item"><i class="icon-file-locked"></i> Disable</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item"><i class="icon-gear"></i> Settings</a>
+									<a class="dropdown-item" (click)="setPrimaryAccount(patient.patientid)"><i class="icon-user"></i> Convert to primary account holder</a>
 								</div>
 							</div>
 						</div>

@@ -4,7 +4,9 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => import("./public/public.module").then(m => m.PublicModule)
+    pathMatch: 'full',
+    redirectTo: '/admin'
+    // loadChildren: () => import("./public/public.module").then(m => m.PublicModule)
   },
   {
     path: "admin",
