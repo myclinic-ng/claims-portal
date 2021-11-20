@@ -20,6 +20,10 @@ import { NewProfileComponent } from './components/profiles/new-profile/new-profi
 import { ServicesComponent } from './components/services/services.component';
 import { ViewCategoryComponent } from './components/services/view-category/view-category.component';
 import { ViewServiceCoverageComponent } from './components/plans/view-service-coverage/view-service-coverage.component';
+import { ProvidersComponent } from './components/providers/providers.component';
+import { ClaimsComponent } from './components/claims/claims.component';
+import { ApprovalRequestsComponent } from './components/claims/approval-requests/approval-requests.component';
+import { ProcessClaimsComponent } from './components/claims/process-claims/process-claims.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { ViewServiceCoverageComponent } from './components/plans/view-service-co
     NewProfileComponent,
     ServicesComponent,
     ViewCategoryComponent,
-    ViewServiceCoverageComponent
+    ViewServiceCoverageComponent,
+    ProvidersComponent,
+    ClaimsComponent,
+    ApprovalRequestsComponent,
+    ProcessClaimsComponent
   ],
   imports: [
     CommonModule,

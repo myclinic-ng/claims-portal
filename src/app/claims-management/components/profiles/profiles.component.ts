@@ -13,8 +13,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./profiles.component.css']
 })
 export class ProfilesComponent implements OnInit {
-
+  modal: any = '';
   subscriptions: any = [];
+  providers: any = [];
 
   selectedSubscription: any = {};
 
@@ -31,6 +32,7 @@ export class ProfilesComponent implements OnInit {
     }
 
     this.loadSubscriptions();
+    this.loadProviders();
   }
 
   loadSubscriptions(): void {
@@ -42,6 +44,25 @@ export class ProfilesComponent implements OnInit {
       else {
         this.subscriptions = e.contentData;
       }
+    }, (error)=>{
+      this.errorHandler.process(error);
+    })
+  }
+
+  open(content: any) {
+    this.modal = this.modalService.open(content);
+  }
+
+  loadProviders(): void {
+    this.serverRequest.get("human-resources/staff-profile/view-all-staffs").subscribe((e)=>{
+      if (this.providers.length < 1){
+          this.providers = e.contentData;
+          this.dtTrigger.next();
+      }
+      else {
+        this.providers = e.contentData;
+      }
+      
     }, (error)=>{
       this.errorHandler.process(error);
     })
