@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-process-claims',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./process-claims.component.css']
 })
 export class ProcessClaimsComponent implements OnInit {
+  
+  @Input() claim: any;
 
   constructor() { }
 

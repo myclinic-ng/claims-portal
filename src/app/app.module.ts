@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -26,11 +28,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       closeButton: true,
       progressBar: false
     }),
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [
     AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }
