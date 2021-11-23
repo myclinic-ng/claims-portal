@@ -24,6 +24,8 @@ export class ApprovalRequestsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
   setSelectedClaim() {
     this.selectedClaimOutput.emit(this.selectedClaim);
   }

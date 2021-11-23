@@ -87,10 +87,16 @@
             </div>
 		</div>
         <div class="row">
-            <div class="col-5" *ngIf="viewApprovalRequests">
+            <div class="text-info" style="display: none; margin-left: 20px; width: 100%;" id="toggler" (click)="toggleClaimList()">
+                <span>
+                    <i class="icon-menu7"></i>
+                </span>
+            </div>
+            
+            <div class="col-5" *ngIf="viewApprovalRequests" id="claimsList">
                 <app-approval-requests (selectedClaimOutput)="getSelectedClaim($event);"></app-approval-requests>
             </div>
-            <div class="col-7" *ngIf="selectedClaim">
+            <div class="col-12" *ngIf="selectedClaim" id="claimDetail">
                 <app-process-claims [claim]="selectedClaim"></app-process-claims>
             </div>
         </div>
