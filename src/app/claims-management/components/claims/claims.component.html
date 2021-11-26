@@ -5,7 +5,7 @@
 			<div class="card-header header-elements-sm-inline">
                 <div class="header-elements"  *ngIf="viewApprovalRequests">
 					<span class="btn btn-info" (click)="clearSelections();">
-                        <i class="bi bi-arrow-return-left"></i>
+                        <i class="fa fa-long-arrow-alt-left"></i>
                         Back
                     </span>
             	</div>
@@ -16,7 +16,7 @@
 			</div>
             <!-- Claim Analytics -->
             <div class="row" *ngIf="!viewApprovalRequests">
-                <div class="col-xl-3 col-sm-6 col-12" style="cursor: pointer;" (click)="viewApprovalRequests = true;"> 
+                <div class="col-xl-3 col-sm-6 col-12" style="cursor: pointer;" (click)="viewApprovalRequests = true; log(viewApprovalRequests)"> 
                     <div class="card bg-danger">
                         <div class="card-content">
                             <div class="card-body">
@@ -87,12 +87,12 @@
             </div>
 		</div>
         <div class="row">
-            <div class="text-info" style="display: none; margin-left: 20px; width: 100%;" id="toggler">
-            <div class="text-info" style="display: none; margin-left: 20px; width: 100%;" id="toggler" (click)="toggleClaimList()">
+            <!-- <div class="text-info" style="display: none; margin-left: 20px; width: 100%;" id="toggler"> -->
+            <!-- <div class="text-info" style="display: none; margin-left: 20px; width: 100%;" id="toggler" (click)="toggleClaimList()">
                 <span>
                     <i class="icon-menu7"></i>
                 </span>
-            </div>
+            </div> -->
             
             <div class="col-12" *ngIf="viewApprovalRequests" id="claimsList">
                 <app-approval-requests (selectedClaimOutput)="getSelectedClaim($event);"></app-approval-requests>
