@@ -1,10 +1,9 @@
-<<<<<<< Updated upstream
 import { Component, OnInit } from '@angular/core';
-=======
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
->>>>>>> Stashed changes
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-approval-requests',
@@ -12,10 +11,18 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./approval-requests.component.css']
 })
 export class ApprovalRequestsComponent implements OnInit {
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject<any>();
 
-<<<<<<< Updated upstream
+  @Output() selectedClaimOutput = new EventEmitter<any>();
+
+  selectedClaim: any;
+
+  claims: any = [
+    {'id': 123, 'provider': 'Blue Blah HealthCare', 'package': 'Gold', 'time': '22-11-21:11:10'}
+  ]
+
   constructor() { }
-=======
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
@@ -49,19 +56,15 @@ export class ApprovalRequestsComponent implements OnInit {
   ]
 
   constructor(private modalService: NgbModal) { }
->>>>>>> Stashed changes
+
 
   ngOnInit(): void {
   }
-
-<<<<<<< Updated upstream
-=======
   
 
   setSelectedClaim() {
     this.selectedClaimOutput.emit(this.selectedClaim);
   }
-
 
   open(content: any) {
     this.modal = this.modalService.open(content);
@@ -79,6 +82,4 @@ export class ApprovalRequestsComponent implements OnInit {
     return this.data;
   }
 
-
->>>>>>> Stashed changes
 }
