@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./claims.component.css']
 })
 export class ClaimsComponent implements OnInit {
-
+  viewApprovalRequests: any;
+  selectedClaim: any;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-<<<<<<< Updated upstream
-=======
   log(x: any): void {
     console.log(x);
   }
@@ -70,6 +70,4 @@ export class ClaimsComponent implements OnInit {
     
     // this.toggleClaimList()
   }
-
->>>>>>> Stashed changes
 }

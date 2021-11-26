@@ -10,6 +10,7 @@ import { SubscriptionsComponent } from './components/subscriptions/subscriptions
 import { ProfilesComponent } from './components/profiles/profiles.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ProvidersComponent } from './components/providers/providers.component';
+import { ClaimsComponent } from './components/claims/claims.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'providers',
         component: ProvidersComponent
+      },
+      {
+        path: 'claims',
+        component: ClaimsComponent
       },
     ]
   },

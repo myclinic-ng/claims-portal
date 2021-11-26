@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
-import { Component, OnInit } from '@angular/core';
-=======
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-approval-requests',
@@ -13,9 +9,6 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class ApprovalRequestsComponent implements OnInit {
 
-<<<<<<< Updated upstream
-  constructor() { }
-=======
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
@@ -49,13 +42,9 @@ export class ApprovalRequestsComponent implements OnInit {
   ]
 
   constructor(private modalService: NgbModal) { }
->>>>>>> Stashed changes
 
   ngOnInit(): void {
   }
-
-<<<<<<< Updated upstream
-=======
   
 
   setSelectedClaim() {
@@ -78,7 +67,4 @@ export class ApprovalRequestsComponent implements OnInit {
   getClaimDetail(claim: any): void {
     return this.data;
   }
-
-
->>>>>>> Stashed changes
 }
